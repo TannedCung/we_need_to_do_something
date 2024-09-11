@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Help Update Victim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff7e6; /* Light yellow background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 40px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #d9534f; /* Red color for headings */
+        }
+        form {
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #f0ad4e; /* Yellow color for buttons */
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ec971f; /* Darker yellow on hover */
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #d9534f; /* Red color for back button */
+        }
+        .back-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Help Update Victim Information</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Submit</button>
+        </form>
+        <a href="{% url 'home' %}" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

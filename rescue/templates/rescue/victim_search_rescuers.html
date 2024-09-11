@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Victim Search Rescuers</title>
+</head>
+<body>
+    <h1>Nearby Rescuers</h1>
+    <ul>
+        {% for rescuer in rescuers %}
+            <li>{{ rescuer.name }} - {{ rescuer.phone }} ({{ rescuer.specialization }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rescuer List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Rescuer List</h1>
+    <a href="{% url 'add_rescuer' %}">Add New Rescuer</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Location</th>
+                <th>Specialization</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rescuer in rescuers %}
+            <tr>
+                <td><a href="{% url 'rescuer_detail' rescuer.id %}">{{ rescuer.name }}</a></td>
+                <td>{{ rescuer.phone }}</td>
+                <td>Lat: {{ rescuer.location_lat }}, Lon: {{ rescuer.location_lon }}</td>
+                <td>{{ rescuer.specialization }}</td>
+                <td>
+                    <a href="{% url 'update_rescuer' rescuer.id %}">Edit</a> |
+                    <a href="{% url 'delete_rescuer' rescuer.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Update Victim Info</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Update Victim Info</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="name">Victim Name:</label>
+        <input type="text" name="name" value="{{ victim.name }}"><br>
+        <label for="phone">Victim Phone:</label>
+        <input type="text" name="phone" value="{{ victim.phone }}"><br>
+        <label for="guest_name">Your Name (Guest):</label>
+        <input type="text" name="guest_name"><br>
+        <label for="guest_phone">Your Phone (Guest):</label>
+        <input type="text" name="guest_phone"><br>
+        <label for="guest_message">Message to Victim:</label>
+        <textarea name="guest_message"></textarea><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>

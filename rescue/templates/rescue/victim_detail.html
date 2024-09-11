@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Victim Detail</title>
+</head>
+<body>
+    <h1>{{ victim.name }}</h1>
+    <p>Phone: {{ victim.phone }}</p>
+    <p>Location: Lat: {{ victim.location_lat }}, Lon: {{ victim.location_lon }}</p>
+    <p>Need: {{ victim.need }}</p>
+    <a href="{% url 'update_victim' victim.id %}">Update Information</a>
+</body>
+</html>
